@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/main_screen_main_layout_padding"
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/myImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/flStart"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_title_image_height_layout"
+        android:contentDescription="@string/main_title_image"
+        android:src="@drawable/img_main_page2"
+        >
+
+    </ImageView>
+    <!-- This is the glide in order to display the gif image -->
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/viewGif"
+        android:layout_width="63dp"
+        android:layout_height="55dp"
+        android:src="@drawable/clockjoypixels"
+        app:layout_constraintBottom_toBottomOf="@+id/myImageView"
+        app:layout_constraintEnd_toEndOf="@+id/myImageView"
+        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintStart_toStartOf="@+id/myImageView"
+        app:layout_constraintTop_toTopOf="@+id/myImageView"
+        app:layout_constraintVertical_bias="0.721">
+
+    </pl.droidsonroids.gif.GifImageView>
+
+    <FrameLayout
+        android:id="@+id/flStart"
+        app:layout_constraintTop_toBottomOf="@id/myImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="@dimen/frame_layout_width"
+        android:layout_height="@dimen/frame_layout_height"
+        android:background="@drawable/item_color_accent_border_ripple_background"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/start"
+            android:layout_gravity="center"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/main_button_text_size"
+            android:textStyle="bold"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flBMI"
+        app:layout_constraintTop_toBottomOf="@id/flStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/flHistory"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/frameBMI_layout_width"
+        android:layout_height="@dimen/frameBMI_layout_height"
+        android:background="@drawable/item_circular_color_accent_background"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi"
+            android:layout_gravity="center"
+            android:textColor="@color/cyan"
+            android:textSize="@dimen/main_button_text_size"
+            android:textStyle="bold"
+            >
+        </TextView>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/calculator"
+        android:textColor="@color/purple_200"
+        android:textSize="@dimen/main_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/flBMI"
+        app:layout_constraintStart_toStartOf="@id/flBMI"
+        app:layout_constraintTop_toBottomOf="@id/flBMI"
+        >
+
+    </TextView>
+
+    <FrameLayout
+        android:id="@+id/flHistory"
+        app:layout_constraintTop_toBottomOf="@id/flStart"
+        app:layout_constraintStart_toEndOf="@id/flBMI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="@dimen/frameBMI_layout_width"
+        android:layout_height="@dimen/frameBMI_layout_height"
+        android:background="@drawable/item_circular_color_accent_background"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_calendar"
+            android:layout_gravity="center"
+            >
+        </ImageView>
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/history"
+        android:textColor="@color/purple_200"
+        android:textSize="@dimen/main_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/flHistory"
+        app:layout_constraintStart_toStartOf="@id/flHistory"
+        app:layout_constraintTop_toBottomOf="@id/flHistory"
+        >
+
+    </TextView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

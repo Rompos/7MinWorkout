@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExerciseActivity"
+    >
+
+    <!--A toolbar is like an action bar but more powerful-->
+    <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbarExercise"
+        android:theme="@style/ToolbarTheme"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        app:titleTextColor="@color/lightGrey"
+        >
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_ready_for"
+        android:textColor="@color/lightGrey"
+        android:textSize="@dimen/main_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/viewGifExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flExerciseView"
+        android:layout_margin="5dp"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exercise_name"
+        android:textColor="@color/lightGrey"
+        android:textSize="@dimen/main_button_text_size"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/viewGifExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/flExerciseView"
+
+        >
+    </TextView>
+    <!-- Rest frame layout -->
+    <!-- frame layout are use when we have items on top of each other-->
+    <FrameLayout
+        android:id="@+id/flRestView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        android:background="@drawable/item_circular_color_accent_border"
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_gravity="center"
+            android:max="10"
+            android:progress="100"
+            android:rotation="-90"
+            android:background="@drawable/circular_progress_grey"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:indeterminate="false"
+            >
+            <!--because the rotation start usually at 3 o'clock
+            and we want to start at 12 o'clock-->
+            <!--we use indeterminate = false because we know
+            how long an operation will take-->
+        </ProgressBar>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/item_circular_color_accent_background"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:text="10">
+
+            </TextView>
+        </LinearLayout>
+
+    </FrameLayout>
+    <!-- End of Rest frame layout -->
+
+
+    <TextView
+        android:id="@+id/tvUpcomingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/up_coming_exercise"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/secondary_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/flRestView"
+        app:layout_constraintBottom_toTopOf="@+id/tvUpcomingExerciseName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        >
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvUpcomingExerciseName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/up_coming_exercise_name"
+        android:textColor="@color/lightGrey"
+        android:textSize="@dimen/main_button_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tvUpcomingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        >
+    </TextView>
+
+    <!-- This is the glide in order to display the gif image -->
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/viewGifExercise"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        android:src="@drawable/ic_sit_ups"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        app:layout_constraintBottom_toTopOf="@id/tvTitle"
+        tools:layout_editor_absoluteX="10dp"
+        android:foreground="@drawable/ic_frame_foreground1"
+        >
+    </pl.droidsonroids.gif.GifImageView>
+
+
+<!-- Exercise frame layout -->
+    <FrameLayout
+        android:id="@+id/flExerciseView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        tools:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
+        android:background="@drawable/item_circular_color_accent_border"
+
+        >
+
+        <ProgressBar
+            android:id="@+id/progressBarExercise"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_gravity="center"
+            android:max="30"
+            android:progress="300"
+            android:rotation="-90"
+            android:background="@drawable/circular_progress_grey"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:indeterminate="false"
+
+            >
+            <!--because the rotation start usually at 3 o'clock
+            and we want to start at 12 o'clock-->
+            <!--we use indeterminate = false because we know
+            how long an operation will take-->
+        </ProgressBar>
+
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@drawable/item_circular_color_accent_background"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTimerExercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="30">
+
+            </TextView>
+        </LinearLayout>
+
+    </FrameLayout>
+    <!--End of Exercise frame layout -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExerciseStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUpcomingExerciseName"
+        android:layout_margin="15dp"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

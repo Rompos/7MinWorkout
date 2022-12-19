@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //global padding
+    <dimen name="main_screen_main_layout_padding">5dp</dimen>
+    //imageview
+    <dimen name="main_title_image_height_layout">220dp</dimen>
+
+    //frame
+    <dimen name="frame_layout_width">150dp</dimen>
+    <dimen name="frame_layout_height">150dp</dimen>
+
+    //frame BMI
+    <dimen name="frameBMI_layout_width">70dp</dimen>
+    <dimen name="frameBMI_layout_height">70dp</dimen>
+
+    //textview main text size
+    <dimen name="main_button_text_size">22sp</dimen>
+
+    //textview secondary text view size
+    <dimen name="secondary_text_size">16sp</dimen>
+</resources>
