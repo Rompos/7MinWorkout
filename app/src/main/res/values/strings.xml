@@ -39,4 +39,6 @@
     <string name="exercise_completed">EXERCISE COMPLETED</string>
     <string name="no_data_available">NO DATA AVAILABLE</string>
     <string name="image_trash_can">image_trash_can</string>
+    <string name="close_button_anim">close_button_anim</string>
+    <string name="calendar_image">calendar_image</string>
 </resources>

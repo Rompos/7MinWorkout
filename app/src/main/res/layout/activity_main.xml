@@ -10,6 +10,24 @@
     >
 
     <ImageView
+        android:id="@+id/avdImage"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/avd_close_to_check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        android:contentDescription="@string/close_button_anim"
+        />
+
+    <ImageView
         android:id="@+id/myImageView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/flStart"
@@ -113,6 +131,7 @@
             android:layout_height="50dp"
             android:src="@drawable/ic_calendar"
             android:layout_gravity="center"
+            android:contentDescription="@string/calendar_image"
             >
         </ImageView>
 
